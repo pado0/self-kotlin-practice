@@ -1,3 +1,5 @@
+package inflearn;
+
 public class ch8_function2 {
     public static void main(String[] args) {
         String[] array = new String[]{"A", "B", "C"};

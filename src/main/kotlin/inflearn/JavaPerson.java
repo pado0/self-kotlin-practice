@@ -1,3 +1,5 @@
+package inflearn;
+
 public class JavaPerson {
 
     private final String name;

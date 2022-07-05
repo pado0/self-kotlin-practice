@@ -1,3 +1,5 @@
+package inflearn;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
