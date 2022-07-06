@@ -22,7 +22,7 @@ public class JavaPenguin extends JavaAnimal implements Swimable, Flyable{
 
     @Override
     public void act() {
-        Swimable.super.act();
-        Flyable.super.act();
+//        Swimable.super.act();
+//        Flyable.super.act();
     }
 }
