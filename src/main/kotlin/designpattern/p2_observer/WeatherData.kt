@@ -1,11 +1,12 @@
 package designpattern.p2_observer
 
 class WeatherData(
-    private val observers:MutableList<Observer>,
     var temperature: Long,
     var humidity: Long,
     var pressure: Long,
 ) : Subject{
+
+    var observers = mutableListOf<Observer>()
 
     override fun registerObserver(o: Observer) {
         observers.add(o)
@@ -18,7 +19,10 @@ class WeatherData(
 
     override fun notifyObservers() {
         for (observer in observers) {
-            observer.update(temperature, humidity, pressure)
+            //observer.update(temperature, humidity, pressure) // 옵저버의 함수를 호출
+
+            // Pull 방식으로 리팩토링
+            observer.update() // 옵저버의 함수를 호출
         }
     }
 
