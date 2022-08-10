@@ -1,6 +1,6 @@
 package effectivekotlin
 
-class item43 {
+class item42 {
 
 }
 class Book(var name:String, var price: Int){
