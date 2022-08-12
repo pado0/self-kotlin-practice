@@ -26,7 +26,7 @@ val startDate: LocalDateTime = // 시작 날짜
         0, 0, 0, 0
     )
 
-
+//master test commit
 fun main() {
 
     val instant:Instant = endDate.toInstant(ZoneOffset.UTC)
