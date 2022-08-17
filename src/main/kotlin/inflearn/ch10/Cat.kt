@@ -1,5 +1,6 @@
 package inflearn.ch10
 
+//test2
 // Cat클래스 만들어줌. species를 받는 생성자 생성
 class Cat(
     species: String
