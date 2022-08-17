@@ -6,3 +6,4 @@ interface Flyable {
     }
 }
 // b1
+// b2
