@@ -8,3 +8,4 @@ abstract class Animal(
     abstract fun move()
 }
 // m1
+// m2
