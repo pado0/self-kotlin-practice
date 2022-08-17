@@ -1,5 +1,5 @@
 package inflearn.ch10
-
+// bugfix2
 class Penguin (
     species: String
 ) : Animal(species, 2), Swimable, Flyable {
