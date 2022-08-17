@@ -15,3 +15,4 @@ public abstract class JavaAnimal {
     public String getSpecies(){return species;}
     public int getLegCount(){return legCount;}
 }
+//m3
