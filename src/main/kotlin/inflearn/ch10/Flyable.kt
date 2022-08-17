@@ -5,3 +5,4 @@ interface Flyable {
         println("파닥파닥")
     }
 }
+// b1
