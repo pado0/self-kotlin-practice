@@ -13,7 +13,7 @@ class KotlinPersonV2 constructor(name:String, age:Int){
 }
 
 // 생성자에서 프로퍼티를 만들어줄 수 있어서, 필드 생략 가능.
-// feature 수정 1-1
+// feature 수정 1-1:::
 class KotlinPersonV3 (val name: String, var age: Int)
 
 class KotlinPersonV4 (val name: String, var age: Int){
