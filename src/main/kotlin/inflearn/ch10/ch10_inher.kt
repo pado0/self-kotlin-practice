@@ -1,5 +1,5 @@
 package inflearn.ch10
-
+// bugfix
 abstract class Animal(
     protected val species: String,
     protected open val legCount: Int
