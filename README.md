@@ -8,5 +8,3 @@ https://pado0.notion.site/Kotlin-95539b14792c43d4bfda473fba778a58
 - inflearn : 인프런 코틀린 입문강의
 - kotlin in action : 서적 내용을 요약 정리
 - designpattern : gof 디자인패턴 서적의 내용을 구현
-
-추가로, git cli 실습도 진행합니다.
