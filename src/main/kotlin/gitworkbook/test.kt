@@ -9,4 +9,5 @@ class test {
     // rebase test v1
     // rebase test v2
     // rebase test v3
+    // rebase test v4 - master
 }
