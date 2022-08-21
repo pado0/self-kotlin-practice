@@ -11,4 +11,5 @@ class test {
     // rebase test v3
     // rebase test v4 - master
     // commit test
+    // amend test - amend test 수정 2
 }
