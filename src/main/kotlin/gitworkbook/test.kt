@@ -17,4 +17,5 @@ class test {
     // feat/a 1
     // feat/a 2
     // feat/a 3
+    // stash test
 }
