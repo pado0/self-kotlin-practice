@@ -4,7 +4,7 @@ fun main(args: Array<String>) {
 
     while (true) {
         var result = 0;
-        val input = readln()
+        val input = "val"
 
         if(input == "#") return
 

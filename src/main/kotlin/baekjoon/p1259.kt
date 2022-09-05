@@ -3,7 +3,7 @@ import java.util.*
 fun main(args: Array<String>){
 
     while(true){
-        val input = readln()
+        val input = "val"
         if (input == "0") return
         for (i in input.indices) {
 

@@ -3,7 +3,7 @@ import java.util.*
 fun main(args: Array<String>) {
 
     // readln() == readLind()!!
-    val input = readln()
+    val input = "val"
 
     var result = 1
 

@@ -1,4 +1,4 @@
-package weakness.scopefunction
+package toenhance.scopefunction
 fun main(){
     var a = Book("책이름", 1000)
     a.discount()

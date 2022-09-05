@@ -1,16 +1,20 @@
-package weakness
+package toenhance.companionobject
 
-import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalDateTime
-import java.time.ZoneOffset
-import java.time.temporal.TemporalAmount
 
-class InstantPractice {
+class CompanionObject {
+
+    companion object{
+        val TEST = "MYTEST"
+        fun testFun(){}
+    }
 }
+
+
 val dayOfWeek = LocalDateTime.now().dayOfWeek.value // 현재 요일
 
-val endDate: LocalDateTime = // 종료 날짜
+val endDate: LocalDateTime =
     LocalDateTime.of(
         LocalDate.now().year,
         LocalDate.now().month,
@@ -19,7 +23,7 @@ val endDate: LocalDateTime = // 종료 날짜
     ).minusDays(
         dayOfWeek.toLong()
     )
-val startDate: LocalDateTime = // 시작 날짜
+val startDate: LocalDateTime =
     LocalDateTime.of(
         endDate.year,
         endDate.month,
@@ -27,14 +31,10 @@ val startDate: LocalDateTime = // 시작 날짜
         0, 0, 0, 0
     )
 
-//master test commit2
-//master test commit
-// maseter check23
 fun main() {
-
-    val instant:Instant = endDate.toInstant(ZoneOffset.UTC)
-
-    println()
-    println("instant = ${instant}")
-    //test commit
+    CompanionObject.testFun() // 동반 객체로 접근 가능. 마치 클래스 생성 없이 스태틱 함수에 접근할 수 있는 것 처럼
+    println("dayOfWeek = ${dayOfWeek}")
+    println("endDate = ${endDate}")
+    println("startDate = ${startDate}")
 }
+

@@ -19,6 +19,3 @@ fun main(args: Array<String>) {
 
 
 // 리펙토링
-fun re1008() {
-    val i = readln().map { (it - '0').toDouble() } // 캐릭터를 입력받아 더블로 바꿈
-}

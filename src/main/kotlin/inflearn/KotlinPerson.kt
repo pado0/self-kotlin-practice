@@ -46,8 +46,6 @@ class KotlinPersonV6 (
     var age: Int = 1){
 
 
-    val uppercase: String
-        get() = this.name.uppercase()
 }
 
 class KotlinPersonV7 (
@@ -56,7 +54,6 @@ class KotlinPersonV7 (
 
     var name = name
         set(value) {
-            field = value.uppercase()
         }
 
 }

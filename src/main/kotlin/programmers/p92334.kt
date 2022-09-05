@@ -1,5 +1,8 @@
 package programmers
-// 신고 결과 받기
+//    for (e in emailMap.keys) {
+//            answer.plus(emailMap[e]!!)
+//            println("an = ${emailMap[e]}")
+//        }
 /*
 불량 이용자를 신고하고 처리 결과를 메일로 발송하는 시스템.
 - 각 유저는 한 번에 한 명의 유저를 신고할 수 있음
@@ -14,16 +17,15 @@ fun main() {
     val report = arrayOf("muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi")
     val k = 2
 
-    val p92334 = p92334()
 
-    val sol = p92334.solution(id_list, report, k)
+    val sol:IntArray = p92334().solution(id_list, report, k)
     for (i in sol) {
         println("i = ${i}")
     }
 }
 class p92334 {
     fun solution(id_list: Array<String>, report: Array<String>, k: Int): IntArray {
-        var answer: IntArray = intArrayOf()
+        var answer: IntArray = IntArray(id_list.size){0}
 
         val emailMap: MutableMap<String, Int> = mutableMapOf()
         for (s in id_list) {
@@ -48,24 +50,29 @@ class p92334 {
             if(warnedMap[warned] == null){
                 warnedMap[warned] = mutableListOf()
             }
-            if(warnedMap[warned]!!.contains(reporter)) warnedMap[warned]!!.add(reporter)
+            if(!warnedMap[warned]!!.contains(reporter)) warnedMap[warned]!!.add(reporter)
 
-            for (m in warnedMap.keys) {
-                if(warnedMap[m]!!.size >= k){ // m이 신고를 k 번 이상 당한 사람이면
-                    // reporterMap에서 m을 포함 사람의 emailMap의 값을 1 증가시킨다
-                    for(r in reporterMap.keys){
-                        if(reporterMap[r]!!.contains(m)){
-                            //!! 여기 루프가 아예 안돈다.
-                            emailMap[r] = emailMap[r]!! + 1
+        }
 
-                        }
+        for (m in warnedMap.keys) {
+            if(warnedMap[m]!!.size >= k){ // m이 신고를 k 번 이상 당한 사람이면
+                // reporterMap에서 m을 포함 사람의 emailMap의 값을 1 증가시킨다
+                for(r in reporterMap.keys){
+                    if(reporterMap[r]!!.contains(m)){
+                        //!! 여기 루프가 아예 안돈다.
+                        emailMap[r] = emailMap[r]!! + 1
+
                     }
                 }
             }
         }
 
         for (e in emailMap.keys) {
-            answer.plus(emailMap[e]!!)
+            var t = 0
+            answer.set(t, emailMap[e]!!)
+            println("answer = ${answer[t]}")
+            t ++
+            println("an = ${emailMap[e]}")
         }
         return answer
     }
