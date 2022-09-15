@@ -1,4 +1,5 @@
 package programmers
+// https://school.programmers.co.kr/learn/courses/30/lessons/92334
 //    for (e in emailMap.keys) {
 //            answer.plus(emailMap[e]!!)
 //            println("an = ${emailMap[e]}")
@@ -67,12 +68,11 @@ class p92334 {
             }
         }
 
+        var t = 0
         for (e in emailMap.keys) {
-            var t = 0
-            answer.set(t, emailMap[e]!!)
+            answer[t] = emailMap[e]!!
             println("answer = ${answer[t]}")
             t ++
-            println("an = ${emailMap[e]}")
         }
         return answer
     }
