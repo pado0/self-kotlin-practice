@@ -8,6 +8,7 @@ enum class Animal(
     BEAR(listOf(2, 4), "brown"); // 세미콜론 필수!
 
     fun sizesSum() = typeList.sum() // 공통 사용될 메소드 만들기
+    fun getColor() = color
 
 }
 
