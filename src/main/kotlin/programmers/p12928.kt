@@ -12,3 +12,13 @@ fun main(){
     val ans = (1..n).filter { n % it == 0 }.sum()
     println("ans = ${ans}")
 }
+
+fun p12931(n: Int): Int{
+    var t = n
+    var answer = 0;
+    while(t > 0){
+        answer += t % 10
+        t /= 10
+    }
+    return answer
+}
