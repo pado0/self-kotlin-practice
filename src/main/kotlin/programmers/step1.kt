@@ -4,12 +4,19 @@ import kotlin.math.pow
 import kotlin.math.sqrt
 
 fun main() {
-    println(p12934(50000000000000))
-    println(p12934(3))
+//    println(p12934(50000000000000))
+//    println(p12934(3))
+//
+//    println(p12932(12345).toList())
+//    println(p12932_r1(12345).toList())
+//    println(p12932_r2(12345).toList())
 
-    println(p12932(12345).toList())
-    println(p12932_r1(12345).toList())
-    println(p12932_r2(12345).toList())
+    println(p12947(18))
+}
+
+fun p12947(x: Int): Boolean{
+    // 하샤드 수: 자릿수 합으로 원래 수가 나누어 떨어져야 한다.
+    return x % x.toString().map { it.toInt() - 48 }.sum() == 0
 }
 
 fun p12934(n: Long): Long {
