@@ -17,8 +17,12 @@ fun main() {
 //    print(p12933_r1(12345))
 
     print(p12925("-1234"))
+    print(p12925_r1("-1234"))
 }
 
+fun p12925_r1(s: String): Int{
+    return s.toInt()
+}
 fun p12925(s: String): Int{
     return if(s[0] == '-') s.filter { it != '-'}.toInt() * (-1)
     else s.filter { it != '+'  }.toInt()
