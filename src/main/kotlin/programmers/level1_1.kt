@@ -6,12 +6,30 @@ import kotlin.math.sqrt
 fun main() {
 //    println(p12934(50000000000000))
 //    println(p12934(3))
-//
+
 //    println(p12932(12345).toList())
 //    println(p12932_r1(12345).toList())
 //    println(p12932_r2(12345).toList())
 
-    println(p12947(18))
+//    println(p12947(18))
+
+//    print(p12933(12345))
+//    print(p12933_r1(12345))
+
+    print(p12925("-1234"))
+}
+
+fun p12925(s: String): Int{
+    return if(s[0] == '-') s.filter { it != '-'}.toInt() * (-1)
+    else s.filter { it != '+'  }.toInt()
+}
+
+fun p12933_r1(n: Long): Long{
+    //String() 생성자는 array를 받아 String으로 넘긴다.
+    return String(n.toString().toCharArray().sortedArrayDescending()).toLong()
+}
+fun p12933(n: Long): Long{
+    return n.toString().map { it.toInt() - 48 }.sortedDescending().joinToString(separator = "").toLong()
 }
 
 fun p12947(x: Int): Boolean{
