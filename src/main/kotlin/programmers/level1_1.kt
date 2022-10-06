@@ -22,10 +22,25 @@ fun main() {
 
     print(Arrays.toString(p12954(2, 5)))
 }
+fun p87389_r1(n: Int): Int{
+    return (1..n).first{n % it == 1}
+}
+
+fun p87389(n: Int): Int{
+    var answer = 0
+    for(x in 1..n) if(n % x == 1) {answer = x; break}
+    return answer
+}
 
 // 아래와 같이 작업하면 iterator는 어디까지, 얼마나 동작하는걸까?
 // 가설: LongArray의 크기인 n만큼.
+// 답: https://github.com/JetBrains/kotlin/blob/1.2.0/core/builtins/native/kotlin/Array.kt#L31
+// 위와 같이 람다를 입력으로 받는다.
 fun p12954_r1(x: Int, n: Int): LongArray = LongArray(n) { x.toLong() * (it + 1) }
+
+// 사실 아래의 형태임. 람다가 괄호 안 파라미터라 밖으로 뺄 수 있음.
+fun p12954_r2(x: Int, n: Int): LongArray = LongArray(n, { x.toLong() * (it + 1) })
+
 fun p12954(x: Int, n:Int): LongArray{
     var answer = longArrayOf()
 
