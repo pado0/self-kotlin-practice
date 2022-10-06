@@ -1,5 +1,6 @@
 package programmers
 
+import java.util.*
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -16,8 +17,23 @@ fun main() {
 //    print(p12933(12345))
 //    print(p12933_r1(12345))
 
-    print(p12925("-1234"))
-    print(p12925_r1("-1234"))
+//    print(p12925("-1234"))
+//    print(p12925_r1("-1234"))
+
+    print(Arrays.toString(p12954(2, 5)))
+}
+
+// 아래와 같이 작업하면 iterator는 어디까지, 얼마나 동작하는걸까?
+// 가설: LongArray의 크기인 n만큼.
+fun p12954_r1(x: Int, n: Int): LongArray = LongArray(n) { x.toLong() * (it + 1) }
+fun p12954(x: Int, n:Int): LongArray{
+    var answer = longArrayOf()
+
+    for (i in 1..n) {
+        answer = answer.plus(x.toLong() * i)
+    }
+
+    return answer
 }
 
 fun p12925_r1(s: String): Int{
