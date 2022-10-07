@@ -22,6 +22,11 @@ fun main() {
 
     print(Arrays.toString(p12954(2, 5)))
 }
+
+//fun p12943(num: Int): Int{
+//
+//    if(num%2 == 0)
+//}
 fun p87389_r1(n: Int): Int{
     return (1..n).first{n % it == 1}
 }
