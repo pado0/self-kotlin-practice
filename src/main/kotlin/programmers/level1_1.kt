@@ -20,13 +20,43 @@ fun main() {
 //    print(p12925("-1234"))
 //    print(p12925_r1("-1234"))
 
-    print(Arrays.toString(p12954(2, 5)))
+//    print(Arrays.toString(p12954(2, 5)))
+    print(p12943(626331))
+
 }
 
-//fun p12943(num: Int): Int{
-//
-//    if(num%2 == 0)
-//}
+
+
+// tailrec을 사용한 풀이 (꼬리 재귀). 사실 꼬리재귀보단, 이런 문제를 재귀로 풀 생각을 하지 못했다는 것을 반성!
+// https://codechacha.com/ko/kotlin-tailrect/
+// 재귀문을 반복문으로 바꾸는 역할
+
+fun p12943_r1(num: Int): Int = recur(num.toLong(), 0)
+
+tailrec fun recur(n: Long, c: Int): Int =
+    when {
+        c > 500 -> -1
+        n == 1L -> c // 값이 1이 됐을 때 c를 리턴.
+        else -> recur(if (n % 2 == 0L) n / 2 else (3 * n + 1), c + 1)
+    }
+
+
+fun p12943(num: Int): Int{
+    var n = num.toLong()
+    var answer = 0
+
+    if( n == 1L) return 0
+
+    while(n != 1L){
+        if(answer >= 500) return -1
+        if(n % 2 == 0L) n /= 2
+        else n = n * 3 + 1
+        println(n)
+        answer ++
+    }
+    return answer
+}
+
 fun p87389_r1(n: Int): Int{
     return (1..n).first{n % it == 1}
 }
