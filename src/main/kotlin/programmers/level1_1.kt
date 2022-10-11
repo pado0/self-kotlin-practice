@@ -1,6 +1,8 @@
 package programmers
 
 import java.util.*
+import kotlin.math.max
+import kotlin.math.min
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -21,10 +23,14 @@ fun main() {
 //    print(p12925_r1("-1234"))
 
 //    print(Arrays.toString(p12954(2, 5)))
-    print(p12943(626331))
+//    print(p12943(626331))
 
+    print(p12912(-10000000, 1))
 }
 
+fun p12912(a: Int, b: Int): Long{
+    return (min(a,b).toLong()..max(a,b)).sum()
+}
 
 
 // tailrec을 사용한 풀이 (꼬리 재귀). 사실 꼬리재귀보단, 이런 문제를 재귀로 풀 생각을 하지 못했다는 것을 반성!
