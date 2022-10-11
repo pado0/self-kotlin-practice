@@ -30,8 +30,16 @@ fun main() {
 //    val arr: Array<String> = arrayOf("Jane", "Kim")
 //    print(p12919(arr))
 
-    print(p12948("1238491283812"))
-    print(p12948_r1("1238491283812"))
+//    print(p12948("1238491283812"))
+//    print(p12948_r1("1238491283812"))
+
+    val arr = intArrayOf(5, 9, 7, 10)
+    print(p12910(arr, 5))
+}
+fun p12910(arr: IntArray, divisor: Int): IntArray {
+
+    val result = arr.filter { it % divisor == 0 }.sorted().toIntArray()
+    return if (result.contentEquals(intArrayOf())) intArrayOf(-1) else result
 }
 
 fun p12948_r1(phone_number: String): String {
