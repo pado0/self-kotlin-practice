@@ -25,7 +25,28 @@ fun main() {
 //    print(Arrays.toString(p12954(2, 5)))
 //    print(p12943(626331))
 
-    print(p12912(-10000000, 1))
+//    print(p12912(-10000000, 1))
+
+//    val arr: Array<String> = arrayOf("Jane", "Kim")
+//    print(p12919(arr))
+
+    print(p12948("1238491283812"))
+    print(p12948_r1("1238491283812"))
+}
+
+fun p12948_r1(phone_number: String): String {
+    return "".padStart(phone_number.length - 4, '*').plus(phone_number.takeLast(4))
+}
+
+fun p12948(phone_number: String): String {
+    var charArr = phone_number.toCharArray()
+    for( i in 0..phone_number.length - 5) charArr[i] = '*'
+    return String(charArr)
+}
+
+
+fun p12919(seoul: Array<String>): String{
+    return "김서방은 ${seoul.indexOf("Kim")}에 있다"
 }
 
 fun p12912(a: Int, b: Int): Long{
