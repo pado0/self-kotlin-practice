@@ -35,12 +35,22 @@ fun main() {
 
 //    val arr = intArrayOf(5, 9, 7, 10)
 //    print(p12910(arr, 5))
-    val arr = p12935(intArrayOf(1,2,3,4,5))
-    for (i in arr) {
-        print(i)
-    }
+
+//    val arr = p12935(intArrayOf(1,2,3,4,5))
+//    for (i in arr) {
+//        print(i)
+//    }
 }
 
+
+fun p76501(absolutes: IntArray, signs: BooleanArray): Int {
+
+    for(i in signs.indices) {
+        if(!signs[i]) absolutes[i]  = absolutes[i] * (-1)
+    }
+
+    return absolutes.sum()
+}
 fun p12935(arr: IntArray): IntArray{
 
     var minValue = 2147000000
