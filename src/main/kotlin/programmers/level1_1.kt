@@ -33,9 +33,24 @@ fun main() {
 //    print(p12948("1238491283812"))
 //    print(p12948_r1("1238491283812"))
 
-    val arr = intArrayOf(5, 9, 7, 10)
-    print(p12910(arr, 5))
+//    val arr = intArrayOf(5, 9, 7, 10)
+//    print(p12910(arr, 5))
+    val arr = p12935(intArrayOf(1,2,3,4,5))
+    for (i in arr) {
+        print(i)
+    }
 }
+
+fun p12935(arr: IntArray): IntArray{
+
+    var minValue = 2147000000
+    for (i in arr) {
+        if(i < minValue) minValue = i
+    }
+    return if(arr.size == 1) intArrayOf(-1) else arr.filter { it != minValue }.toIntArray()
+
+}
+
 fun p12910(arr: IntArray, divisor: Int): IntArray {
 
     val result = arr.filter { it % divisor == 0 }.sorted().toIntArray()
