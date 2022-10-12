@@ -40,15 +40,18 @@ fun main() {
 //    for (i in arr) {
 //        print(i)
 //    }
+
 }
 
+fun p86501(numbers: IntArray): Int {
+    return (0..9).filter { !numbers.contains(it) }.sum()
+}
 
 fun p76501(absolutes: IntArray, signs: BooleanArray): Int {
 
     for(i in signs.indices) {
         if(!signs[i]) absolutes[i]  = absolutes[i] * (-1)
     }
-
     return absolutes.sum()
 }
 fun p12935(arr: IntArray): IntArray{
