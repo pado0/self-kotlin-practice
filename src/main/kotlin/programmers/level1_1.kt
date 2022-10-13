@@ -41,8 +41,13 @@ fun main() {
 //        print(i)
 //    }
 
+    print(p12922(4))
 }
 
+fun p12922(n: Int): String{
+    return ("수박").repeat(n/2 + 1).take(n)
+
+}
 fun p86501(numbers: IntArray): Int {
     return (0..9).filter { !numbers.contains(it) }.sum()
 }
