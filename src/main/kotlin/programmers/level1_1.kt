@@ -41,7 +41,15 @@ fun main() {
 //        print(i)
 //    }
 
-    print(p12922(4))
+//    print(p12922(4))
+
+    println(p12903("abcde"))
+    println(p12903("abcdef"))
+}
+
+fun p12903(s: String): String{
+    return if(s.length % 2 == 0) "${s[(s.length / 2 - 1)]}${s[(s.length / 2)]}"
+    else return s[s.length / 2].toString()
 }
 
 fun p12922(n: Int): String{
