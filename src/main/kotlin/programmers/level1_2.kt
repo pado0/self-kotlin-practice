@@ -1,9 +1,24 @@
 package programmers
 
+import kotlin.math.abs
+
 fun main() {
 
     print(p12918("1111"))
     print(p12918 ("a111"))
+
+    print(p82612(3, 20, 4))
+}
+
+fun p82612_r1(price: Int, money: Int, count: Int): Long {
+    return (1..count).map { it * price.toLong() }.sum().let {
+        if (money > it ) 0 else it - money
+    }
+}
+fun p82612(price: Int, money: Int, count: Int): Long{
+    var m = money.toLong()
+    for(i in 1..count) m -= (price * i)
+    return if (m < 0) abs(m) else 0L
 }
 
 fun p12950(arr1: Array<IntArray>, arr2: Array<IntArray>): Array<IntArray> {
