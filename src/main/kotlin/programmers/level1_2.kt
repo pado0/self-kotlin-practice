@@ -4,10 +4,19 @@ import kotlin.math.abs
 
 fun main() {
 
-    print(p12918("1111"))
-    print(p12918 ("a111"))
+//    print(p12918("1111"))
+//    print(p12918 ("a111"))
+//
+//    print(p82612(3, 20, 4))
+    main2()
+}
 
-    print(p82612(3, 20, 4))
+fun main2() {
+    val (a, b) = readLine()!!.split(' ').map(String::toInt)
+
+    (1..b).forEach{(1..a).forEach {print("*")} ; println() }
+
+
 }
 
 fun p82612_r1(price: Int, money: Int, count: Int): Long {
