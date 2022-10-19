@@ -1,5 +1,6 @@
 package programmers
 
+import max
 import kotlin.math.abs
 
 fun main() {
@@ -8,15 +9,25 @@ fun main() {
 //    print(p12918 ("a111"))
 //
 //    print(p82612(3, 20, 4))
-    main2()
+    p12969()
 }
 
-fun main2() {
+fun p12940_r1(n: Int, m: Int): IntArray {
+    val gcd = gcd(n, m)
+    return intArrayOf(gcd, n * m / gcd)
+}
+tailrec fun gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
+
+// 두 수의 최대공약수와 최소공배수
+fun p12940(n: Int, m: Int): IntArray {
+    val mc = (1..max(n,m)).sortedDescending().first { n % it == 0 && m % it == 0 }.toInt()
+    val mm = mc * (m / mc) * (n / mc)
+    return intArrayOf(mc, mm)
+}
+
+fun p12969() {
     val (a, b) = readLine()!!.split(' ').map(String::toInt)
-
     (1..b).forEach{(1..a).forEach {print("*")} ; println() }
-
-
 }
 
 fun p82612_r1(price: Int, money: Int, count: Int): Long {
