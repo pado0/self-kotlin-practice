@@ -9,7 +9,23 @@ fun main() {
 //    print(p12918 ("a111"))
 //
 //    print(p82612(3, 20, 4))
-    p12969()
+//    p12969()
+
+    println(p12930("hello nice to meet u"))
+    println(p12930("try hello world"))
+}
+
+fun p12930(s: String): String{
+    var answer = ""
+    var p = 0
+    for (i in s.indices) {
+        if(s[i] == ' ') p = 1
+        if (p % 2 == 0) answer += s[i].toUpperCase()
+        else answer += s[i].toLowerCase()
+        p++
+    }
+
+    return answer
 }
 
 fun p12940_r1(n: Int, m: Int): IntArray {
