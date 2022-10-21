@@ -2,6 +2,7 @@ package programmers
 
 import max
 import kotlin.math.abs
+import kotlin.math.pow
 
 fun main() {
 
@@ -10,10 +11,41 @@ fun main() {
 //
 //    print(p82612(3, 20, 4))
 //    p12969()
+//
+//    println(p12930("hello nice to meet u"))
+//    println(p12930("try hello world"))
 
-    println(p12930("hello nice to meet u"))
-    println(p12930("try hello world"))
+    println(p68935(45))
+    println(p68935_r1(45))
+
 }
+
+// 지리는 진법 전환
+fun p68935_r1(n: Int): Int {
+    return n.toString(3).reversed().toInt(3) // 3진법을 10진수 int로
+}
+fun p68935(n: Int): Int {
+    // n을 3진법에서 앞뒤로 뒤집은  이를 다시 10진법으로 표현
+    var x = n
+    var y = 0L
+    var answer = 0
+
+    // 뒤집어진 삼진법
+    while(x  > 0){
+        y = (y * 10) + (x % 3)
+        x /= 3
+    }
+
+    var i = 0
+    while(y > 0){
+        answer += ((y % 10) * 3.0.pow(i.toDouble())).toInt()
+        y /= 10
+        i++
+    }
+    return answer
+}
+
+
 
 fun p12930(s: String): String{
     var answer = ""
