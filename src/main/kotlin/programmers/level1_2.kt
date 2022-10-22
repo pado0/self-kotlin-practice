@@ -18,6 +18,19 @@ fun main() {
     println(p68935(45))
     println(p68935_r1(45))
 
+    println(p12926("ab z A ZrZ", 1))
+}
+
+// a를 25번 밀어야 z가 됨
+// 26번 밀면 자기자신이 되니까 리셋 -> n은 1-25네
+// 더한 결과가 z를 넘어가면 빼주면 되겠다.
+fun p12926(s: String, n: Int): String {
+    return s.map {
+        if(it == ' ') it
+        else if(it + n in 'a'..'z') it + n
+        else if(it + n in 'A'..'Z') it + n
+        else it + n - 26
+    }.joinToString("")
 }
 
 // 지리는 진법 전환
