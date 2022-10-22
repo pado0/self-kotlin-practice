@@ -18,7 +18,7 @@ fun main() {
     println(p68935(45))
     println(p68935_r1(45))
 
-    println(p12926("ab z A ZrZ", 1))
+    println(p12926("ab z A ZrZ", 25))
 }
 
 // a를 25번 밀어야 z가 됨
@@ -27,9 +27,14 @@ fun main() {
 fun p12926(s: String, n: Int): String {
     return s.map {
         if(it == ' ') it
-        else if(it + n in 'a'..'z') it + n
-        else if(it + n in 'A'..'Z') it + n
-        else it + n - 26
+        else if(it in 'a'..'z') {
+            if (it+n in 'a'..'z') it + n
+            else it + n - 26
+        }
+        else{
+            if (it+n in 'A'..'Z') it + n
+            else it + n - 26
+        }
     }.joinToString("")
 }
 
