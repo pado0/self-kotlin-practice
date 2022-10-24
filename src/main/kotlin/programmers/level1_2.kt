@@ -1,6 +1,7 @@
 package programmers
 
 import max
+import java.lang.Integer.min
 import kotlin.math.abs
 import kotlin.math.pow
 
@@ -20,6 +21,22 @@ fun main() {
 
     println(p12926("ab z A ZrZ", 25))
 }
+
+// 모든 명함을 담을 수 있는 가장 작은 카드지갑의 넓이 구하기
+// 다이나믹 프로그래밍?
+fun p86491(sizes: Array<IntArray>): Int{
+
+    var a = 0
+    var b = 0
+
+    for(i in sizes){
+        a = max(max(i[0], i[1]), a) // 둘중 큰 것 중에 큰 것
+        b = max(min(i[0], i[1]), b) // 둘중 작은 것 중에 큰 것
+    }
+
+    return a * b
+}
+
 
 // a를 25번 밀어야 z가 됨
 // 26번 밀면 자기자신이 되니까 리셋 -> n은 1-25네
