@@ -16,10 +16,17 @@ fun main() {
 //    println(p12930("hello nice to meet u"))
 //    println(p12930("try hello world"))
 
-    println(p68935(45))
-    println(p68935_r1(45))
+//    println(p68935(45))
+//    println(p68935_r1(45))
+//
+//    println(p12926("ab z A ZrZ", 25))
 
-    println(p12926("ab z A ZrZ", 25))
+    println(p12915(arrayOf("sun", "bed", "car"), 1))
+}
+
+// sortedWith(compareBy()) 방식도 있다.
+fun p12915(strings: Array<String>, n: Int): Array<String> {
+    return strings.map { it[n] + it }.sorted().map { it.slice(1 until it.length)}.toTypedArray()
 }
 
 // 모든 명함을 담을 수 있는 가장 작은 카드지갑의 넓이 구하기
