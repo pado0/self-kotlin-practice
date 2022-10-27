@@ -21,10 +21,23 @@ fun main() {
 //
 //    println(p12926("ab z A ZrZ", 25))
 
-    println(p12915(arrayOf("sun", "bed", "car"), 1))
+//    println(p12915(arrayOf("sun", "bed", "car"), 1))
+    print(p132267(2,1,20))
+    print(p132267(3, 1, 20))
 }
 
 // sortedWith(compareBy()) 방식도 있다.
+
+fun p132267(a: Int, b: Int, n: Int): Int{
+    var count = n
+    var answer = 0 // 현재 가진 병의 개수
+    while(count > a - 1){
+        answer += count / a * b
+        count = count / a * b + (count % a) // 빈병 a개를 n/a번 갖다주면 콜라병 b개가 생김
+    }
+    return answer
+}
+
 fun p12915(strings: Array<String>, n: Int): Array<String> {
     return strings.map { it[n] + it }.sorted().map { it.slice(1 until it.length)}.toTypedArray()
 }
