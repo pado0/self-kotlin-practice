@@ -28,6 +28,7 @@ fun main() {
 
 // sortedWith(compareBy()) 방식도 있다.
 
+//return (if (n > b) n - b else 0) / (a - b) * b // 다음 코드 분석해보기
 fun p132267(a: Int, b: Int, n: Int): Int{
     var count = n
     var answer = 0 // 현재 가진 병의 개수
@@ -36,6 +37,7 @@ fun p132267(a: Int, b: Int, n: Int): Int{
         count = count / a * b + (count % a) // 빈병 a개를 n/a번 갖다주면 콜라병 b개가 생김
     }
     return answer
+
 }
 
 fun p12915(strings: Array<String>, n: Int): Array<String> {
