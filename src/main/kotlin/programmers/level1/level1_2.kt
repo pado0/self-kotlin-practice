@@ -30,6 +30,14 @@ fun main() {
     print(isBabble("a"))
 }
 
+fun solution(a: Int, b: Int): String {
+    var answer = ""
+
+    println(a + b);
+
+    return answer
+}
+
 fun p133499(babbling: Array<String>): Int {
 
     var answer = 0

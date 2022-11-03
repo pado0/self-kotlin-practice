@@ -1,4 +1,4 @@
-package programmers
+package programmers.old
 // https://school.programmers.co.kr/learn/courses/30/lessons/92334
 //    for (e in emailMap.keys) {
 //            answer.plus(emailMap[e]!!)
