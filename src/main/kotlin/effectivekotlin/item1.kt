@@ -1,6 +1,5 @@
 package effectivekotlin
 
-import java.lang.reflect.Array.get
 import java.util.*
 import kotlin.concurrent.thread
 
@@ -17,8 +16,11 @@ fun main() {
 
 //    p11_array_list_arraylist()
 //    p14_mutable_change_collection_element()
-    p15_custom_immutable_object()
+//    p15_custom_immutable_object()
+
+    p18_changeable_point()
 }
+
 
 
 fun p5_thread(){
@@ -146,4 +148,39 @@ data class User(
     val surname: String,
 ){
     fun changeSurname(surname: String) = User(this.name, surname)
+}
+
+fun p16_changeable_list(){
+    // 방법1. mutable 컬렉션 선언. 변경 가능 지점이 리스트 구현체 내부에 있다
+    val list1: MutableList<Int> = mutableListOf()
+    // 방법2. var로 읽고 쓸 수 있는 프로퍼티 선언. 변경 가능 지점이 프로퍼티 자체이다.
+    var list2: List<Int> = listOf()
+
+    list1.add(1) // 물론 list1에도 plus가 가능하다
+    list2 = list2.plus(1)
+}
+data class UserA(val name: String)
+class BadUserRepository{
+    private val storedUsers: MutableMap<Int, String > = mutableMapOf()
+
+    fun loadAll(): MutableMap<Int, String> {
+        return storedUsers
+    }
+}
+
+class GoodUserRepository{
+    private val storedUsers: MutableMap<Int, String > = mutableMapOf()
+
+    fun loadAll(): MutableMap<Int, String> {
+        return storedUsers
+    }
+}
+
+fun p18_changeable_point(){
+
+    val badUserRepository = BadUserRepository()
+    val storedUser = badUserRepository.loadAll()
+    storedUser[0] = "abc" // 외부에서 컬렉션에 대한 수정이 일어나게 된다.
+    println(badUserRepository.loadAll())
+
 }
