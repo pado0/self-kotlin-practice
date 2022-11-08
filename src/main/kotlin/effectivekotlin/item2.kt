@@ -17,7 +17,7 @@ fun main() {
     // 23p. 여러 프로퍼디 한꺼번에 설정
     println(degreeOf(10))
 
-    // 24p. 캡처링. 에라토스테네스의 채
+    // 24p. 캡처링. 에라토스테네스의 채 : https://bottom-to-top.tistory.com/64
     var numbers = (2..100).toList()
     val primes = mutableListOf<Int>()
     while (numbers.isNotEmpty()){
