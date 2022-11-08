@@ -4,8 +4,15 @@ class level2_1 {
 }
 
 fun main() {
-    println(p12914(4))
-    println(p12914(2000))
+//    println(p12914(4))
+//    println(p12914(2000))
+    println(p12939("-1 -2 -3 -4"))
+    println(p12939("1 2 3 4"	))
+}
+
+fun p12939(s: String): String {
+    val list = s.split(" ").map { it.toLong() }.sorted()
+    return list.first().toString()+" "+list.last()
 }
 
 //p12914 코드 정리. map이 전역에 있는게 너무 구리다.
