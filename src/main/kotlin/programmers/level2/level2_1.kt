@@ -6,9 +6,25 @@ class level2_1 {
 fun main() {
 //    println(p12914(4))
 //    println(p12914(2000))
-    println(p12939("-1 -2 -3 -4"))
-    println(p12939("1 2 3 4"	))
+//    println(p12939("-1 -2 -3 -4"))
+//    println(p12939("1 2 3 4"	))
+
+    println(p12945(3))
+    println(p12945(5))
 }
+
+fun p12945(n: Int): Int{
+    val f = mutableListOf<Int>()
+
+    f.add(0)
+    f.add(1)
+
+    for(i in 2..n){
+        f.add((f[i-1] + f[i-2]) % 1234567)
+    }
+    return f[n]
+}
+
 
 fun p12939(s: String): String {
     val list = s.split(" ").map { it.toLong() }.sorted()
