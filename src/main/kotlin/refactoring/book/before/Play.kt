@@ -1,4 +1,4 @@
-package refactoring
+package refactoring.book.before
 
 class Play(
     val name: String,

@@ -1,4 +1,4 @@
-package refactoring
+package refactoring.book.before
 
 class Invoice(
     val customer: String,

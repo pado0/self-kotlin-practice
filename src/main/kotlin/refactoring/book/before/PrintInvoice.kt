@@ -1,4 +1,4 @@
-package refactoring
+package refactoring.book.before
 
 import java.text.DecimalFormat
 import kotlin.math.floor
@@ -67,10 +67,12 @@ fun main() {
         "othello" to Play("Othello", type = "tragedy")
     )
 
-    println(PrintInvoice.statement(
-        invoice = invoice,
-        plays = plays,
-    ))
+    println(
+        PrintInvoice.statement(
+            invoice = invoice,
+            plays = plays,
+        )
+    )
 
 
 }
